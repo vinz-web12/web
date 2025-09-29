@@ -124,61 +124,194 @@ footer{margin-top:18px;font-size:13px;color:#666;display:flex;justify-content:sp
             <div class="price">Rp 20.000</div>
           </div>
           <a class="btn btn-primary" href="#" onclick="addToCart('Keychain Acrylic',20000)">Beli</a>
-        </div>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Toko Anime Shadow</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      color: white;
+      overflow-x: hidden;
+    }
 
-      </div>
+    /* Background Foto */
+    .bg-image {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('https://ucarecdn.com/ff4088b4-356a-4766-97b5-5edb6149e6e2/0f509b891d.jpg') no-repeat center center fixed;
+      background-size: cover;
+      z-index: -1;
+      filter: brightness(0.6);
+    }
 
-      <footer>
-        <div>Stok terbatas — pembelian cepat disarankan</div>
-        <div><small>Developed for Acode HTML preview</small></div>
-      </footer>
+    header {
+      text-align: center;
+      padding: 30px 20px;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(3px);
+    }
+
+    header img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(255,255,255,0.7);
+      margin-bottom: 10px;
+    }
+
+    header h1 {
+      font-size: 35px;
+      text-shadow: 0 0 15px #ff66cc;
+    }
+
+    .produk-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .produk {
+      width: 250px;
+      background: rgba(0,0,0,0.7);
+      border-radius: 15px;
+      margin: 15px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+      animation: fadeUp 1s ease forwards;
+      opacity: 0;
+    }
+
+    .produk img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .produk h3 {
+      margin: 10px 0;
+      font-size: 20px;
+      text-shadow: 0 0 10px #ff99ff;
+    }
+
+    .produk p {
+      margin: 5px 0;
+    }
+
+    /* Tombol Anime Style */
+    .btn {
+      display: inline-block;
+      font-size: 16px;
+      padding: 15px 20px;
+      margin-top: 10px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 20px;
+      background: linear-gradient(90deg, #ff66cc, #9966ff);
+      box-shadow: 0 0 15px rgba(255,102,204,0.7);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      top: 0; left: -50%;
+      width: 50%; height: 100%;
+      background: rgba(255,255,255,0.5);
+      transform: skewX(-20deg);
+      animation: shine 2s infinite;
+    }
+
+    @keyframes shine {
+      0% { left: -50%; }
+      100% { left: 120%; }
+    }
+
+    @keyframes fadeUp {
+      0% { transform: translateY(40px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Tombol Saluran Sticky */
+    .saluran {
+      position: fixed;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Foto -->
+  <div class="bg-image"></div>
+
+  <!-- Header / Profil -->
+  <header>
+    <img src="https://img1.pixhost.to/images/9050/645354695_zion.jpg" alt="Profil Anime">
+    <h1>Panel Bot Wa</h1>
+    <p>Tempat jualan produk Panel ✨</p>
+  </header>
+
+  <!-- Produk -->
+  <div class="produk-container">
+    <div class="produk">
+      <img src="https://img1.pixhost.to/images/9050/645354702_zion.jpg" alt="Panel 2GB">
+      <h3>Panel 2GB</h3>
+      <p>Harga: Rp2.000</p>
+      <a class="btn" href="https://wa.me/6285704106207?text=Halo%20saya%20mau%20beli%20Panel%202GB">Beli via WA</a>
     </div>
 
-    <aside class="sidebar">
-      <h3>Keranjang Sementara</h3>
-      <div id="cartEmpty">Belum ada item</div>
-      <div style="margin-top:12px;display:flex;gap:8px">
-        <!-- ganti nomor WA di sini -->
-        <a id="whatsappBtn" class="btn btn-primary" href="#" target="_blank">Chat via WhatsApp</a>
-        <a class="btn btn-ghost" href="#" onclick="clearCart()">Kosongkan</a>
-      </div>
+    <div class="produk">
+      <img src="https://img1.pixhost.to/images/9050/645354704_zion.jpg" alt="Figure Anime">
+      <h3>Panel 4GB</h3>
+      <p>Harga: Rp4.000</p>
+      <a class="btn" href="https://wa.me/6285704106207?text=Halo%20saya%20mau%20beli%20Panel%204GB">Beli via WA</a>
+    </div>
 
-      <hr style="margin:12px 0;border:none;border-top:1px solid rgba(16,24,40,0.06)">
-      <div>
-        <strong>Info Pengiriman</strong>
-        <p style="margin:6px 0 0;font-size:13px;color:#555">Kirim via JNE / J&T — isi alamat saat konfirmasi di WhatsApp.</p>
-      </div>
-    </aside>
-  </section>
-</main>
+    <div class="produk">
+      <img src="https://ucarecdn.com/770c8dce-2443-4536-a17c-524753dc0b44/0f509b891d.jpg" alt="Figure Anime">
+      <h3>Panel 4GB</h3>
+      <p>Harga: Rp4.000</p>
+      <a class="btn" href="https://wa.me/6285704106207?text=Halo%20saya%20mau%20beli%20Panel%208GB">Beli via WA</a>
+    </div>
 
-  </div>  <script>
-    // ====== KONFIGURASI: GANTI NOMOR WHATSAPP DI SINI ======
-    // format internasional, contoh: 6285704106207
-    const WHATSAPP_NUMBER = '6285704106207';
-    // pesan default
-    const DEFAULT_MESSAGE = encodeURIComponent('Halo, saya mau order: ');
-    document.getElementById('whatsappBtn').href = `https://wa.me/${WHATSAPP_NUMBER}?text=${DEFAULT_MESSAGE}`;
+    <!-- Produk ke-4 (tambahkan produk lagi) -->
+    <div class="produk">
+      <img src="https://ucarecdn.com/d4ce49d6-57df-4478-9dca-d2312c9d6eba/0f509b891d.jpg" alt="Produk Baru">
+      <h3>Panel 8GB</h3>
+      <p>Harga: Rp8.000</p>
+      <a class="btn" href="https://wa.me/6285704106207?text=Halo%20saya%20mau%20beli%20Panel%2016GB">Beli via WA</a>
+    </div>
 
-    // ====== LOGIKA KERANJANG SEDERHANA ======
-    const cart = [];
-    function addToCart(name,price){
-      cart.push({name,price});
-      renderCart();
-      // buka WA otomatis dengan isi pesan singkat (opsional)
-      const msg = encodeURIComponent(`Halo, saya mau pesan: ${name} - Rp ${price.toLocaleString()}`);
-      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`,'_blank');
-    }
-    function renderCart(){
-      const el = document.getElementById('cartEmpty');
-      if(cart.length===0){ el.innerHTML='Belum ada item'; return }
-      let total = 0;
-      el.innerHTML = '<ul style="padding-left:16px;margin:0">' + cart.map((c,i)=>{ total+=c.price; return `<li>${c.name} — Rp ${c.price.toLocaleString()} <button style="margin-left:8px" onclick="removeItem(${i})">x</button></li>` }).join('') + `</ul><div style='margin-top:8px;font-weight:700'>Total: Rp ${total.toLocaleString()}</div>`;
-    }
-    function removeItem(i){ cart.splice(i,1); renderCart(); }
-    function clearCart(){ cart.length=0; renderCart(); }
-
-    // set awal
-    renderCart();
-  </script></body>
+    <!-- Produk ke-5 dan seterusnya -->
+    <div class="produk">
+      <img src="https://ucarecdn.com/331b3f1a-89e8-42d7-bd74-d60cd3e12e54/0f509b891d.jpg" alt="Produk Baru">
+      <h3>Panel 10GB</h3>
+      <p>Harga: Rp10.000</p>
+      <a class="btn" href="https://wa.me/6285704106207?text=Halo%20saya%20mau%20beli%20Panel%2032GB">Beli via WA</a>
+    </div>
+    <div class="produk">
+      <img src="https://ucarecdn.com/e55d2dc7-b208-4df1-b297-088f7c8019ad/0f509b891d.jpg" alt="Produk Baru">
+      <h3>Panel UNLI</h3>
+      <p>Harga: Rp13.000</p>
+      <a class="btn" href="https://wa.me/6285704106207?text=Halo%20saya%20mau%20beli%20Panel%2032GB">Beli via WA</a>
+    </div>
+  </div>
+  <div class="saluran">
+    <a class="btn" href="https://whatsapp.com/channel/0029Vb5zBgCH5JLqSbLR9t24" target="_blank">🔗 Gabung Saluran</a>
+  </div>
+</body>
 </html>
